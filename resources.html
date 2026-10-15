@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources &amp; Calculators — Rooted Rupees</title>
+<meta name="description" content="Free financial calculators — EMI, SIP, FD, retirement, loan eligibility, goal planning and income tax — plus market insights and guides.">
+<link rel="icon" href="assets/images/logo-mark.jpg">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/calculators.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/images/logo-mark.jpg" alt="Rooted Rupees logo">
+      <span class="brand-word">ROOTED RUPEES</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="about-us.html">About Us</a></li>
+      <li class="nav-links">
+        <a href="what-we-do.html">What We Do?</a>
+      </li>
+      <li class="nav-links">
+        <a href="resources.html">Calculators </a>
+      </li>
+      <li class="nav-links">
+        <a href="learn.html">Learn</a>
+        
+      </li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="about-us.html" class="btn btn-primary">Get Started <span class="arrow">→</span></a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="kicker">Resources</span>
+      <h1>Calculators, research<br>&amp; guides — all in one place.</h1>
+      <div class="rule"></div>
+      <p>Run the numbers on your next financial decision, then go deeper with our research and guides.</p>
+    </div>
+  </section>
+
+  <!-- ============ CALCULATOR HUB ============ -->
+  <section class="calc-shell" id="calculators">
+    <div class="container calc-layout">
+
+      <!-- Sidebar -->
+      <nav class="calc-list" aria-label="Calculator selection">
+        <button data-calc="emi" class="active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M16 15h0"/></svg>
+          EMI Calculator
+        </button>
+        <button data-calc="loan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12l4-4 3 3 5-5 6 6"/><path d="M3 20h18"/></svg>
+          Loan Eligibility
+        </button>
+        <button data-calc="sip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+          SIP Calculator
+        </button>
+        <button data-calc="fd">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 4v16M4 9h16"/></svg>
+          FD Calculator
+        </button>
+        <button data-calc="retirement">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 20V9M6 9l3-6 3 6M12 20v-7M18 20V6M15 6l3-3 3 3"/></svg>
+          Retirement Planner
+        </button>
+        <button data-calc="goal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg>
+          Goal Planner
+        </button>
+        <button data-calc="tax">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M5 7l-3 6a3.2 3.2 0 006 0zM19 7l-3 6a3.2 3.2 0 006 0zM5 7h14M8 21h8"/></svg>
+          Income Tax Calculator
+        </button>
+      </nav>
+
+      <!-- Panels -->
+      <div class="calc-panels">
+
+        <!-- EMI -->
+        <div class="calc-panel active" id="panel-emi">
+          <div class="calc-head">
+            <span class="tag">Loans</span>
+            <h2>EMI Calculator</h2>
+            <p>Find out your monthly instalment for any loan amount, interest rate and tenure.</p>
+          </div>
+          <div class="calc-body">
+            <div class="calc-inputs">
+              <div class="field">
+                <label>Loan Amount <span class="val" id="emi-amount-display">₹25,00,000</span></label>
+                <input type="range" id="emi-amount" data-pair="emi-amount-num" min="50000" max="20000000" step="10000" value="2500000">
+                <div class="num-input"><span>₹</span><input type="number" id="emi-amount-num" data-pair="emi-amount" value="2500000"></div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label>Interest Rate</label>
+                  <div class="num-input"><input type="number" id="emi-rate" step="0.1" value="8.5"><span>% p.a.</span></div>
+                </div>
+                <div class="field">
+                  <label>Tenure</label>
+                  <div class="num-input"><input type="number" id="emi-tenure" value="20"><span>years</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="calc-results">
+              <div class="headline"><span>Monthly EMI</span><strong id="emi-monthly">₹0</strong></div>
+              <div class="result-row"><span class="label"><span class="dot" style="background:var(--pine-deep);"></span>Principal Amount</span><span class="amt" id="emi-principal">₹0</span></div>
+              <div class="result-row"><span class="label"><span class="dot" style="background:var(--gold);"></span>Total Interest</span><span class="amt" id="emi-interest">₹0</span></div>
+              <div class="bar-split"><div id="emi-bar-principal" style="width:50%"></div><div id="emi-bar-interest" style="width:50%"></div></div>
+              <div class="result-row"><span class="label">Total Payment</span><span class="amt" id="emi-total">₹0</span></div>
+              <p class="calc-note">Illustrative only — actual EMI may vary by lender, processing fees and rate resets.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOAN ELIGIBILITY -->
+        <div class="calc-panel" id="panel-loan">
+          <div class="calc-head">
+            <span class="tag">Loans</span>
+            <h2>Loan Eligibility Calculator</h2>
+            <p>Estimate how much loan you may qualify for, based on your income and existing obligations.</p>
+          </div>
+          <div class="calc-body">
+            <div class="calc-inputs">
+              <div class="field">
+                <label>Monthly Net Income</label>
+                <div class="num-input"><span>₹</span><input type="number" id="loan-income" value="90000"></div>
+              </div>
+              <div class="field">
+                <label>Existing Monthly EMIs</label>
+                <div class="num-input"><span>₹</span><input type="number" id="loan-existing" value="5000"></div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label>Interest Rate</label>
+                  <div class="num-input"><input type="number" id="loan-rate" step="0.1" value="8.5"><span>% p.a.</span></div>
+                </div>
+                <div class="field">
+                  <label>Tenure</label>
+                  <div class="num-input"><input type="number" id="loan-tenure" value="20"><span>years</span></div>
+                </div>
+              </div>
+              <div class="field">
+                <label>Max EMI as % of income (FOIR) <span class="val" id="loan-foir-display">50%</span></label>
+                <input type="range" id="loan-foir" min="20" max="70" step="5" value="50">
+              </div>
+            </div>
+            <div class="calc-results">
+              <div class="headline"><span>Estimated Loan Eligibility</span><strong id="loan-eligible">₹0</strong></div>
+              <div class="result-row"><span class="label">Max EMI you can afford</span><span class="amt" id="loan-maxemi">₹0</span></div>
+              <div class="result-row"><span class="label">Monthly income considered</span><span class="amt" id="loan-income-used">₹0</span></div>
+              <div class="bar-split"><div id="loan-bar-used" style="width:50%;background:var(--pine-deep);"></div><div id="loan-bar-free" style="width:50%;background:var(--gold);"></div></div>
+              <p class="calc-note">A guideline only. Lenders assess credit score, employment type and other liabilities too.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIP -->
+        <div class="calc-panel" id="panel-sip">
+          <div class="calc-head">
+            <span class="tag">Investing</span>
+            <h2>SIP Calculator</h2>
+            <p>See how a monthly SIP can grow over time with the power of compounding.</p>
+          </div>
+          <div class="calc-body">
+            <div class="calc-inputs">
+              <div class="field">
+                <label>Monthly Investment <span class="val" id="sip-amount-display">₹10,000</span></label>
+                <input type="range" id="sip-amount" data-pair="sip-amount-num" min="500" max="200000" step="500" value="10000">
+                <div class="num-input"><span>₹</span><input type="number" id="sip-amount-num" data-pair="sip-amount" value="10000"></div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label>Expected Return</label>
+                  <div class="num-input"><input type="number" id="sip-rate" step="0.5" value="12"><span>% p.a.</span></div>
+                </div>
+                <div class="field">
+                  <label>Time Period</label>
+                  <div class="num-input"><input type="number" id="sip-years" value="15"><span>years</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="calc-results">
+              <div class="headline"><span>Estimated Future Value</span><strong id="sip-future">₹0</strong></div>
+              <div class="result-row"><span class="label"><span class="dot" style="background:var(--pine-deep);"></span>Total Invested</span><span class="amt" id="sip-invested">₹0</span></div>
+              <div class="result-row"><span class="label"><span class="dot" style="background:var(--gold);"></span>Est. Returns</span><span class="amt" id="sip-gains">₹0</span></div>
+              <div class="bar-split"><div id="sip-bar-invested" style="width:50%"></div><div id="sip-bar-gains" style="width:50%"></div></div>
+              <p class="calc-note">Returns are illustrative and not guaranteed. Mutual fund investments are subject to market risk.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FD -->
+        <div class="calc-panel" id="panel-fd">
+          <div class="calc-head">
+            <span class="tag">Savings</span>
+            <h2>Fixed Deposit Calculator</h2>
+            <p>Calculate the maturity value of your fixed deposit.</p>
+          </div>
+          <div class="calc-body">
+            <div class="calc-inputs">
+              <div class="field">
+                <label>Deposit Amount <span class="val" id="fd-amount-display">₹1,00,000</span></label>
+                <input type="range" id="fd-amount" data-pair="fd-amount-num" min="5000" max="5000000" step="5000" value="100000">
+                <div class="num-input"><span>₹</span><input type="number" id="fd-amount-num" data-pair="fd-amount" value="100000"></div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label>Interest Rate</label>
+                  <div class="num-input"><input type="number" id="fd-rate" step="0.1" value="7.1"><span>% p.a.</span></div>
+                </div>
+                <div class="field">
+                  <label>Tenure</label>
+                  <div class="num-input"><input type="number" id="fd-years" value="5"><span>years</span></div>
+                </div>
+              </div>
+              <div class="field">
+                <label>Compounding Frequency</label>
+                <select id="fd-compound">
+                  <option value="1">Annually</option>
+                  <option value="2">Half-Yearly</option>
+                  <option value="4" selected>Quarterly</option>
+                  <option value="12">Monthly</option>
+                </select>
+              </div>
+            </div>
+            <div class="calc-results">
+              <div class="headline"><span>Maturity Value</span><strong id="fd-maturity">₹0</strong></div>
+              <div class="result-row"><span class="label"><span class="dot" style="background:var(--pine-deep);"></span>Principal</span><span class="amt" id="fd-principal">₹0</span></div>
+              <div class="result-row"><span class="label"><span class="dot" style="background:var(--gold);"></span>Interest Earned</span><span class="amt" id="fd-interest">₹0</span></div>
+              <div class="bar-split"><div id="fd-bar-principal" style="width:50%"></div><div id="fd-bar-interest" style="width:50%"></div></div>
+              <p class="calc-note">Actual FD rates vary by bank and tenure. TDS may apply on interest earned.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RETIREMENT -->
+        <div class="calc-panel" id="panel-retirement">
+          <div class="calc-head">
+            <span class="tag">Planning</span>
+            <h2>Retirement Planner</h2>
+            <p>Estimate the corpus you'll need and how much to invest monthly to get there.</p>
+          </div>
+          <div class="calc-body">
+            <div class="calc-inputs">
+              <div class="field-row">
+                <div class="field">
+                  <label>Current Age</label>
+                  <div class="num-input"><input type="number" id="ret-age" value="30"><span>yrs</span></div>
+                </div>
+                <div class="field">
+                  <label>Retirement Age</label>
+                  <div class="num-input"><input type="number" id="ret-retireage" value="60"><span>yrs</span></div>
+                </div>
+              </div>
+              <div class="field">
+                <label>Current Monthly Expense</label>
+                <div class="num-input"><span>₹</span><input type="number" id="ret-expense" value="50000"></div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label>Expected Inflation</label>
+                  <div class="num-input"><input type="number" id="ret-inflation" step="0.5" value="6"><span>%</span></div>
+                </div>
+                <div class="field">
+                  <label>Expected Return</label>
+                  <div class="num-input"><input type="number" id="ret-return" step="0.5" value="11"><span>%</span></div>
+                </div>
+              </div>
+              <div class="field">
+                <label>Life Expectancy</label>
+                <div class="num-input"><input type="number" id="ret-life" value="85"><span>yrs</span></div>
+              </div>
+            </div>
+            <div class="calc-results">
+              <div class="headline"><span>Retirement Corpus Needed</span><strong id="ret-corpus">₹0</strong></div>
+              <div class="result-row"><span class="label">Monthly expense at retirement</span><span class="amt" id="ret-futureexpense">₹0</span></div>
+              <div class="result-row"><span class="label">Years to retirement</span><span class="amt" id="ret-years">0 yrs</span></div>
+              <div class="result-row"><span class="label">Required monthly SIP</span><span class="amt" id="ret-sip">₹0</span></div>
+              <p class="calc-note">Assumes corpus continues to earn returns through retirement while expenses keep rising with inflation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- GOAL PLANNER -->
+        <div class="calc-panel" id="panel-goal">
+          <div class="calc-head">
+            <span class="tag">Planning</span>
+            <h2>Goal Planner</h2>
+            <p>Whatever you're saving for — a home, a wedding, an education — find the monthly SIP to get there.</p>
+          </div>
+          <div class="calc-body">
+            <div class="calc-inputs">
+              <div class="field">
+                <label>Goal Amount (Today's Value) <span class="val" id="goal-amount-display">₹20,00,000</span></label>
+                <input type="range" id="goal-amount" data-pair="goal-amount-num" min="50000" max="50000000" step="50000" value="2000000">
+                <div class="num-input"><span>₹</span><input type="number" id="goal-amount-num" data-pair="goal-amount" value="2000000"></div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label>Years to Goal</label>
+                  <div class="num-input"><input type="number" id="goal-years" value="10"><span>yrs</span></div>
+                </div>
+                <div class="field">
+                  <label>Expected Return</label>
+                  <div class="num-input"><input type="number" id="goal-return" step="0.5" value="12"><span>%</span></div>
+                </div>
+              </div>
+              <div class="field">
+                <label>Savings You Already Have</label>
+                <div class="num-input"><span>₹</span><input type="number" id="goal-current" value="100000"></div>
+              </div>
+            </div>
+            <div class="calc-results">
+              <div class="headline"><span>Required Monthly SIP</span><strong id="goal-required-sip">₹0</strong></div>
+              <div class="result-row"><span class="label">Goal target</span><span class="amt" id="goal-target">₹0</span></div>
+              <div class="result-row"><span class="label">Future value of current savings</span><span class="amt" id="goal-fv-current">₹0</span></div>
+              <div class="result-row"><span class="label">Remaining gap to fund via SIP</span><span class="amt" id="goal-remaining">₹0</span></div>
+              <p class="calc-note">Assumes your goal amount is in today's rupees and your current savings keep growing at the same expected return.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAX -->
+        <div class="calc-panel" id="panel-tax">
+          <div class="calc-head">
+            <span class="tag">Taxes</span>
+            <h2>Income Tax Calculator <span style="font-size:0.6em;color:var(--ink-soft);font-family:var(--font-body);">(New Regime, illustrative)</span></h2>
+            <p>Get a quick estimate of your income tax liability under the simplified new tax regime.</p>
+          </div>
+          <div class="calc-body">
+            <div class="calc-inputs">
+              <div class="field">
+                <label>Annual Gross Income <span class="val" id="tax-income-display">₹12,00,000</span></label>
+                <input type="range" id="tax-income" data-pair="tax-income-num" min="200000" max="10000000" step="10000" value="1200000">
+                <div class="num-input"><span>₹</span><input type="number" id="tax-income-num" data-pair="tax-income" value="1200000"></div>
+              </div>
+              <table class="tax-table">
+                <thead><tr><th>Slab</th><th>Rate</th><th>Tax</th></tr></thead>
+                <tbody id="tax-slab-body"></tbody>
+              </table>
+            </div>
+            <div class="calc-results">
+              <div class="headline"><span>Estimated Tax Payable</span><strong id="tax-total">₹0</strong></div>
+              <div class="result-row"><span class="label">Taxable Income (after std. deduction)</span><span class="amt" id="tax-taxable">₹0</span></div>
+              <div class="result-row"><span class="label">Tax before cess</span><span class="amt" id="tax-beforecess">₹0</span></div>
+              <div class="result-row"><span class="label">Health &amp; Education Cess (4%)</span><span class="amt" id="tax-cess">₹0</span></div>
+              <div class="result-row"><span class="label">Estimated Take-Home (Annual)</span><span class="amt" id="tax-takehome">₹0</span></div>
+              <p class="calc-note">Simplified illustration using new-regime style slabs and a ₹75,000 standard deduction. Not tax advice — consult a professional for filing.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INSIGHTS ============ -->
+  <section class="insights" id="insights">
+    <div class="container">
+      <div class="section-title">
+        <h2>Insights to keep you ahead.</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="insights-grid">
+        <div class="insight-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+          <h3>Market Insights</h3>
+          <p>Timely updates and expert views on the markets.</p>
+          <a href="#" class="btn-link">Coming soon <span class="arrow">→</span></a>
+        </div>
+        <div class="insight-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6a2 2 0 012-2h5v16H6a2 2 0 01-2-2z"/><path d="M20 6a2 2 0 00-2-2h-5v16h5a2 2 0 002-2z"/></svg>
+          <h3>Articles &amp; Guides</h3>
+          <p>Simplifying finance with practical insights.</p>
+          <a href="#" class="btn-link">Coming soon <span class="arrow">→</span></a>
+        </div>
+        <div class="insight-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+          <h3>Reports &amp; Publications</h3>
+          <p>Actionable research for smarter decisions.</p>
+          <a href="#" class="btn-link">Coming soon <span class="arrow">→</span></a>
+        </div>
+        <div class="insight-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg>
+          <h3>Webinars &amp; Events</h3>
+          <p>Stay informed and learn from industry experts.</p>
+          <a href="#" class="btn-link">Coming soon <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/images/logo-mark.jpg" alt="Rooted Rupees logo">
+          <div><h3>Rooted in values.</h3><p>Focused on you.</p></div>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zm7 0h3.8v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.65 4.78 6.1v6.32h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.7h-4v-12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="mailto:hello@rootedrupees.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-form">
+        <h4>Stay updated with insights &amp; resources.</h4>
+        <form class="subscribe subscribe-form">
+          <input type="email" placeholder="Enter your email" required aria-label="Email address">
+          <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </form>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul><li><a href="about-us.html">About Us</a></li><li><a href="what-we-do.html">What We Do</a></li><li><a href="resources.html">Resources</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul><li><a href="resources.html#calculators">Tools</a></li><li><a href="learn.html">Learn</a></li><li><a href="about-us.html#contact">Contact Us</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Rooted Rupees. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/calculators.js"></script>
+</body>
+</html>
